@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NEXTLMS
 
-## Getting Started
+Next Generation of Learning Management System, Engaging, Interactive, and Fun.
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone this repository
+2. Run `pnpm install`
+3. Run `pnpm dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is using Monorepo architecture, with the following structure:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `apps` folder contains all the apps that will be used in the project.
+- `libs` folder contains all the shared libraries that will be used in the project.
+- `apps/platform` folder contains the platform app.
+- `apps/api` folder contains the api or backend app.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+### UI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+UI folder is located in `libs/ui`, it contains all the UI components that will be used in the project. All UI component should be build using Tailwind Variants, well typed, and well documented.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Feature
 
-## Deploy on Vercel
+To add a new feature, create a PR first, and create new branch with the following format:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `feature/<feature-name>` for new feature.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Bugfix
+
+To fix a bug, create a PR first, and create new branch with the following format:
+
+- `bugfix/<bug-name>` for new feature.
+
+### Commit Message
+
+Commit message should be in the following format:
+
+- `feat(scope): <commit-message>` for new feature.
+- `fix(scope): <commit-message>` for bugfix.
+- `chore(scope): <commit-message>` for chore.
+
+#### Example
+
+- `feat(ui): add button component`
+- `fix(ui): fix button component`
+- `chore(ui): change button dependencies`
+
+### Important Notes
+
+- Do not commit directly to `main` branch.
+- Always create a PR first before merging to `main` branch.
+- Always create a new branch for every PR.
+- Always create a new branch for every feature/bugfix.
