@@ -1,7 +1,7 @@
 import prisma from '@/utils/prisma/prisma';
 
 async function getConfig() {
-  const config = await prisma.config.findFirst();
+  const config = await prisma.config.findFirst({});
   return config;
 }
 
