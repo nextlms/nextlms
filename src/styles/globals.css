@@ -9,6 +9,9 @@
   p {
     @apply text-secondary-800;
   }
+  blockquote {
+    @apply text-secondary-800 rounded-xl bg-primary-100 p-4 m-6;
+  }
   h1 {
     @apply text-4xl tracking-tight font-medium;
   }
