@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 export const useRegister = () => {
+  const [loading, setLoading] = useState(false);
   const initialData = {
     firstName: '',
     lastName: '',
@@ -17,20 +18,26 @@ export const useRegister = () => {
   };
 
   const handleRegister = async () => {
+    setLoading(true);
     const { firstName, lastName, email, password } = registerData;
+
+    // TODO: Add validation
 
     const res = await fetch('/api/auth/register', {
       method: 'POST',
       body: JSON.stringify({ firstName, lastName, email, password }),
     });
     const { message, error } = await res.json();
+
     if (error || !res.ok) {
+      setLoading(false);
       toast.error(error);
       return;
     }
 
     toast.success(message);
+    setLoading(false);
   };
 
-  return { registerData, handleChange, handleRegister };
+  return { loading, registerData, handleChange, handleRegister };
 };

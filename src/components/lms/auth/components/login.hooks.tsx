@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 export const useLogin = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const initialData = {
     email: '',
     password: '',
@@ -15,7 +18,10 @@ export const useLogin = () => {
   };
 
   const handleLogin = async () => {
+    setLoading(true);
     const { email, password } = loginData;
+
+    // TODO: Add validation
 
     const res = await fetch('/api/auth/login', {
       method: 'POST',
@@ -23,11 +29,15 @@ export const useLogin = () => {
     });
     const { message, error } = await res.json();
     if (error || !res.ok) {
+      setLoading(false);
       toast.error(error);
       return;
     }
+
+    setLoading(false);
     toast.success(message);
+    router.push('/dashboard');
   };
 
-  return { loginData, handleChange, handleLogin };
+  return { loading, loginData, handleChange, handleLogin };
 };
