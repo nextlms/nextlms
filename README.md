@@ -2,6 +2,8 @@
 
 Next Generation of Learning Management System, Engaging, Interactive, and Fun.
 
+![alt text](public/ui.png)
+
 ## Installation
 
 1. Clone this repository
