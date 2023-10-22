@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useRegister } from './register.hooks';
 
 export const RegisterUI = () => {
-  const { registerData, handleChange, handleRegister } = useRegister();
+  const { loading, registerData, handleChange, handleRegister } = useRegister();
 
   return (
     <>
@@ -44,7 +44,7 @@ export const RegisterUI = () => {
           placeholder="Password"
           onChange={handleChange}
         />
-        <Button className="w-full" onClick={handleRegister}>
+        <Button disabled={loading} className="w-full" onClick={handleRegister}>
           Sign up
         </Button>
       </div>

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useLogin } from './login.hooks';
 
 export const LoginUI = () => {
-  const { loginData, handleChange, handleLogin } = useLogin();
+  const { loading, loginData, handleChange, handleLogin } = useLogin();
 
   return (
     <>
@@ -28,7 +28,7 @@ export const LoginUI = () => {
           placeholder="Password"
           onChange={handleChange}
         />
-        <Button className="w-full" onClick={handleLogin}>
+        <Button disabled={loading} className="w-full" onClick={handleLogin}>
           Sign in
         </Button>
       </div>
