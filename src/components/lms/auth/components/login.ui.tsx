@@ -4,20 +4,10 @@ import { Button } from '@/components/sharedui/button';
 import { Input } from '@/components/sharedui/input';
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useLogin } from './login.hooks';
 
 export const LoginUI = () => {
-  const initialData = {
-    email: '',
-    password: '',
-  };
-
-  const [loginData, setLoginData] = useState(initialData);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setLoginData({ ...loginData, [name]: value });
-  };
+  const { loginData, handleChange, handleLogin } = useLogin();
 
   return (
     <>
@@ -30,9 +20,17 @@ export const LoginUI = () => {
         </p>
       </div>
       <div className="space-y-2">
-        <Input type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <Input type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <Button className="w-full">Sign in</Button>
+        <Input value={loginData.email} type="email" name="email" placeholder="Email" onChange={handleChange} />
+        <Input
+          value={loginData.password}
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        <Button className="w-full" onClick={handleLogin}>
+          Sign in
+        </Button>
       </div>
       <div className="flex space-x-1">
         <p>Don&apos;t have an account?</p>

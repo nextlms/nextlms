@@ -4,22 +4,10 @@ import { Button } from '@/components/sharedui/button';
 import { Input } from '@/components/sharedui/input';
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useRegister } from './register.hooks';
 
 export const RegisterUI = () => {
-  const initialData = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-  };
-
-  const [registerData, setRegisterData] = useState(initialData);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setRegisterData({ ...registerData, [name]: value });
-  };
+  const { registerData, handleChange, handleRegister } = useRegister();
 
   return (
     <>
@@ -33,12 +21,32 @@ export const RegisterUI = () => {
       </div>
       <div className="space-y-2">
         <div className="grid grid-cols-2 gap-2">
-          <Input type="text" name="firstName" placeholder="First name" onChange={handleChange} />
-          <Input type="text" name="lastName" placeholder="Last name" onChange={handleChange} />
+          <Input
+            value={registerData.firstName}
+            type="text"
+            name="firstName"
+            placeholder="First name"
+            onChange={handleChange}
+          />
+          <Input
+            value={registerData.lastName}
+            type="text"
+            name="lastName"
+            placeholder="Last name"
+            onChange={handleChange}
+          />
         </div>
-        <Input type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <Input type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <Button className="w-full">Sign up</Button>
+        <Input value={registerData.email} type="email" name="email" placeholder="Email" onChange={handleChange} />
+        <Input
+          value={registerData.password}
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        <Button className="w-full" onClick={handleRegister}>
+          Sign up
+        </Button>
       </div>
       <div className="space-y-2">
         <div className="flex space-x-1">
