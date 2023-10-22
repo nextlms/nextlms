@@ -5,5 +5,5 @@ interface LabelProps {
 }
 
 export const Label: React.FC<LabelProps> = ({ text }) => {
-  return <div>{text}</div>;
+  return <div className="font-medium tracking-tight">{text}</div>;
 };
