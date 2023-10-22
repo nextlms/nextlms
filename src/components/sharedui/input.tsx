@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
 
 const inputStyle = tv({
-  base: 'w-full font-medium bg-secondary-50/50 border-1 text-white rounded-lg active:opacity-80 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 focus:outline-none transition duration-300 ease-in-out',
+  base: 'w-full font-medium bg-secondary-50/50 border-1 text-black rounded-lg active:opacity-80 focus:border-primary-600 focus:ring-2 focus:ring-primary-200 focus:outline-none transition duration-300 ease-in-out',
   variants: {
     size: {
       sm: 'text-sm',

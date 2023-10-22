@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:../db/lms.db"
+  url      = "file:./db/lms.db"
 }
 
 model Config {
@@ -34,7 +34,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email     String   @unique
-  password  String
+  password  String?
   firstName String
   lastName  String
   avatar    String?

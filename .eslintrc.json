@@ -11,6 +11,9 @@
     "react/function-component-definition": "off",
     "arrow-body-style": "off",
     "react/button-has-type": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "object-curly-newline": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }
