@@ -3,6 +3,7 @@ import { Input } from '.';
 export default {
   title: 'Input',
   component: Input,
+  tags: ['autodocs'],
 };
 
 export const TextInput = () => <Input placeholder="Input your name" />;
