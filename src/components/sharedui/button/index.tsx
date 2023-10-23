@@ -6,10 +6,12 @@ const buttonStyle = tv({
   base: 'font-medium bg-secondary-300 text-white rounded-lg active:opacity-80 transition duration-300 ease-in-out',
   variants: {
     variant: {
-      primary: 'bg-primary-600 hover:bg-primary-800 text-white',
-      secondary: 'bg-secondary-100 hover:bg-secondary-200 text-secondary-800',
-      outline: 'bg-transparent border border-secondary-200 hover:bg-secondary-200 text-secondary-800',
-      ghost: 'bg-transparent hover:bg-secondary-200 text-secondary-800',
+      primary: 'bg-primary-600 shadow-sm hover:bg-primary-800 text-white',
+      secondary:
+        'bg-white border-1 hover:border-primary-600 shadow-sm hover:shadow-secondary-200 active:bg-primary-100 text-secondary-800',
+      outline:
+        'bg-transparent border border-primary-500 shadow-sm hover:bg-primary-600 hover:text-white active:bg-primary-800 text-secondary-800',
+      ghost: 'bg-transparent hover:bg-secondary-100 hover:shadow-sm text-secondary-800',
     },
     size: {
       sm: 'text-sm',
