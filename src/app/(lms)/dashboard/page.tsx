@@ -1,3 +1,5 @@
+import { Dashboard } from '@/components/lms/dashboard/components/dashboard';
+
 export default function Page() {
-  return <div>Dashboard</div>;
+  return <Dashboard />;
 }

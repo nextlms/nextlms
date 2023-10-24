@@ -11,7 +11,7 @@ const buttonStyle = tv({
         'bg-white border-1 hover:border-primary-600 shadow-sm hover:shadow-secondary-200 active:bg-primary-100 text-secondary-800',
       outline:
         'bg-transparent border border-primary-500 shadow-sm hover:bg-primary-600 hover:text-white active:bg-primary-800 text-secondary-800',
-      ghost: 'bg-transparent hover:bg-secondary-100 hover:shadow-sm text-secondary-800',
+      ghost: 'bg-transparent hover:bg-secondary-50 hover:shadow-sm text-secondary-950',
     },
     size: {
       sm: 'text-sm',
