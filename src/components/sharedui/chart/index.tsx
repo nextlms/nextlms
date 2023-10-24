@@ -19,7 +19,8 @@ export const Chart: React.FC<ChartProps> = ({ dataKey, rangeData }) => {
         <YAxis width={20} />
         <Tooltip />
         <Area
-          type="monotone"
+          strokeWidth={2}
+          type="linear"
           dataKey={dataKey}
           stroke="#673bec"
           fillOpacity={1}
