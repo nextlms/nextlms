@@ -7,7 +7,12 @@ export default async function middleware(req: NextRequest) {
   const decodedAccessToken = new TextEncoder().encode(ACCESS_TOKEN_SECRET);
 
   if (req.nextUrl.pathname === '/') {
-    return NextResponse.rewrite(new URL('/login', req.nextUrl));
+    try {
+      await jose.jwtVerify(accessToken, decodedAccessToken);
+      return NextResponse.redirect(new URL('/dashboard', req.nextUrl));
+    } catch (error: any) {
+      return NextResponse.rewrite(new URL('/login', req.nextUrl));
+    }
   }
 
   try {
