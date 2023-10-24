@@ -5,55 +5,55 @@ export default {
   component: Chart,
 };
 
-const data = [
+const newMembers = [
   {
     name: 'Jan',
     users: 0,
   },
   {
     name: 'Feb',
-    users: 20,
+    users: 1,
   },
   {
     name: 'March',
-    users: 22,
-  },
-  {
-    name: 'April',
-    users: 42,
-  },
-  {
-    name: 'May',
-    users: 20,
-  },
-  {
-    name: 'June',
-    users: 55,
-  },
-  {
-    name: 'July',
-    users: 12,
-  },
-  {
-    name: 'Aug',
     users: 5,
   },
   {
+    name: 'April',
+    users: 6,
+  },
+  {
+    name: 'May',
+    users: 12,
+  },
+  {
+    name: 'June',
+    users: 14,
+  },
+  {
+    name: 'July',
+    users: 16,
+  },
+  {
+    name: 'Aug',
+    users: 12,
+  },
+  {
     name: 'Sept',
-    users: 27,
+    users: 18,
   },
   {
     name: 'Oct',
-    users: 35,
+    users: 19,
   },
   {
     name: 'Nov',
-    users: 35,
+    users: 21,
   },
   {
     name: 'Dec',
-    users: 48,
+    users: 25,
   },
 ];
 
-export const Default = () => <Chart dataKey="users" rangeData={data} />;
+export const Default = () => <Chart dataKey="users" rangeData={newMembers} />;
