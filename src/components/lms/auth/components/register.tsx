@@ -4,7 +4,7 @@ import { Button } from '@/components/sharedui/button';
 import { Input } from '@/components/sharedui/input';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRegister } from './register.hooks';
+import { useRegister } from '../hooks/useRegister';
 
 export const RegisterUI = () => {
   const { loading, registerData, handleChange, handleRegister } = useRegister();
