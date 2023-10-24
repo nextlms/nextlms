@@ -1,51 +1,31 @@
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend,
-);
-
-export const options = {
-  plugins: {
-    legend: {
-      display: false,
-    },
-  },
-  scales: {
-    x: {
-      grid: {
-        display: false,
-      },
-    },
-    y: {
-      grid: {
-        display: false,
-      },
-    },
-  },
-};
+import { AreaChart, XAxis, YAxis, Area, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface ChartProps {
-  data: { labels: string[]; datasets: any[] };
+  dataKey: string;
+  rangeData: any[];
 }
 
-export const Chart: React.FC<ChartProps> = ({ data }) => {
-  return <Line options={options} data={data} />;
+export const Chart: React.FC<ChartProps> = ({ dataKey, rangeData }) => {
+  return (
+    <ResponsiveContainer width="100%" height={300} style={{ padding: 0 }}>
+      <AreaChart data={rangeData}>
+        <defs>
+          <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#bcb5fd" stopOpacity={0.8} />
+            <stop offset="100%" stopColor="#ebe9fe" stopOpacity={0.2} />
+          </linearGradient>
+        </defs>
+        <XAxis dataKey="name" />
+        <YAxis width={20} />
+        <Tooltip />
+        <Area
+          type="monotone"
+          dataKey={dataKey}
+          stroke="#673bec"
+          fillOpacity={1}
+          fill="url(#colorPv)"
+        />
+      </AreaChart>
+    </ResponsiveContainer>
+  );
 };
