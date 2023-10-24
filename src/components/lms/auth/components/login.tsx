@@ -4,7 +4,7 @@ import { Button } from '@/components/sharedui/button';
 import { Input } from '@/components/sharedui/input';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useLogin } from './login.hooks';
+import { useLogin } from '../hooks/useLogin';
 
 export const LoginUI = () => {
   const { loading, loginData, handleChange, handleLogin } = useLogin();
