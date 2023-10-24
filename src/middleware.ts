@@ -6,6 +6,10 @@ export default async function middleware(req: NextRequest) {
   const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET!;
   const decodedAccessToken = new TextEncoder().encode(ACCESS_TOKEN_SECRET);
 
+  if (req.nextUrl.pathname === '/') {
+    return NextResponse.rewrite(new URL('/login', req.nextUrl));
+  }
+
   try {
     await jose.jwtVerify(accessToken, decodedAccessToken);
     return NextResponse.next();
@@ -15,5 +19,5 @@ export default async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: '/dashboard/:path*',
+  matcher: ['/', '/dashboard/:path*'],
 };
