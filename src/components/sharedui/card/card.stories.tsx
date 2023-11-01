@@ -6,5 +6,5 @@ export default {
   tags: ['autodocs'],
 };
 
-export const Plain = () => <Card>Plain</Card>;
+export const Plain = () => <Card>Plain Card</Card>;
 export const Outline = () => <Card variant="outline">Outline</Card>;
